@@ -1,4 +1,9 @@
+import Header from './components/UI/header/header'
+import Footer from './components/UI/footer/footer';
 import './globals.css'
+import { Inter } from 'next/font/google'
+
+const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
   title: 'Create Next App',
@@ -12,7 +17,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body className={inter.className}>   
+        <Header />
+        <main className='h-screen w-full'>{children}</main>
+        <Footer />   
+      </body>
     </html>
   )
 }
